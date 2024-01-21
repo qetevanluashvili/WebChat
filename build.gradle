@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.mziuri'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    implementation "org.apache.tomcat.embed:tomcat-embed-core:10.0.20"
+    implementation "org.apache.tomcat.embed:tomcat-embed-jasper:10.0.20"
+    testImplementation platform('org.junit:junit-bom:5.9.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    implementation 'mysql:mysql-connector-java:8.0.23'
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+}
+
+test {
+    useJUnitPlatform()
+}

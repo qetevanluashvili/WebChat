@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Anonymous Chat</title>
+	<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: row;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #messages {
+            margin-top: 20px;
+            white-space: pre-line;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+	<h2>User Registration</h2>
+	<form id="userRegistrationForm">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" required>
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required>
+
+		<button type="button" onclick="registerUser()">Register</button>
+	</form>
+</div>
+
+
+<div class="form-container">
+	<h2>Send a Message</h2>
+	<form id="messageSendingForm">
+		<label for="messageUsername">Recipient:</label>
+		<input type="text" id="messageUsername" name="messageUsername" required>
+
+		<label for="messageText">Message:</label>
+		<input type="text" id="messageText" name="messageText" required>
+
+		<button type="button" onclick="sendMessage()">Send Message</button>
+	</form>
+</div>
+
+<div class="form-container">
+	<h2>Read Messages</h2>
+	<form id="readMessagesForm">
+		<label for="readUsername">Username:</label>
+		<input type="text" id="readUsername" name="readUsername" required>
+
+		<label for="readPassword">Password:</label>
+		<input type="password" id="readPassword" name="readPassword" required>
+
+		<button type="button" onclick="readMessages()">Read Messages</button>
+	</form>
+
+	<div id="messages"></div>
+</div>
+
+
+</body>
+</html>
